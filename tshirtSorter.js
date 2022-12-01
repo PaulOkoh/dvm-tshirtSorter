@@ -28,5 +28,37 @@ function tshirtSorter(x) {
   return small + medium + large;
 }
 
+const tshirtSorter = (str) => {
+  let charCount = {
+    s: 0,
+    m: 0,
+    l: 0,
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    charCount[str[i]]++;
+  }
+
+  return (
+    "s".repeat(charCount["s"]) +
+    "l".repeat(charCount["l"]) +
+    "l".repeat(charCount["l"])
+  );
+};
+
+// const tshirtSorter = (str) => {
+//   let charCount = {
+//       's': 0,
+//       'm': 0,
+//       'l': 0,
+//   };
+
+//   for (let i = 0; i < str.length; i++) {
+//       charCount[str[i]]++;
+//   }
+
+//   return 's'.repeat(charCount['s'])+'l'.repeat(charCount['l'])+'l'.repeat(charCount['l'])
+// };
+
 console.log(tshirtSorter("lms"));
 console.log(tshirtSorter("slsmmsllsmsmlmsls"));
